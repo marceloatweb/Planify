@@ -56,5 +56,8 @@ def excluir_lancamento(id):
         return jsonify({"mensagem": "Lançamento excluído com sucesso!"})
     return jsonify({"erro": "Lançamento não encontrado!"}), 404
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
